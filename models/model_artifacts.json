@@ -44,14 +44,14 @@
       "Ensemble_Voting": 0.9847482778093273
     },
     "training_time": {
-      "Baseline_LR": 1.5532329082489014,
-      "Advanced_SVM": 67.55866527557373,
-      "Random_Forest": 3.0236220359802246,
-      "Naive_Bayes": 0.25243186950683594,
-      "XGBoost": 40.637324810028076,
-      "LightGBM": 6.61133885383606,
-      "CatBoost": 156.9752175807953,
-      "Ensemble_Voting": 253.13804244995117
+      "Baseline_LR": 1.6100032329559326,
+      "Advanced_SVM": 66.15633392333984,
+      "Random_Forest": 4.284446716308594,
+      "Naive_Bayes": 0.2899646759033203,
+      "XGBoost": 51.04997134208679,
+      "LightGBM": 9.564630031585693,
+      "CatBoost": 166.69659447669983,
+      "Ensemble_Voting": 284.0721130371094
     }
   },
   "label_encoder_classes": [
@@ -86,5 +86,5 @@
     "Travel Vouchers",
     "Weather-related Disruptions"
   ],
-  "training_date": "2025-07-21T09:59:29.382374"
+  "training_date": "2025-07-21T16:29:34.082915"
 }

@@ -32,9 +32,9 @@
     "Weather-related Disruptions"
   ],
   "n_classes": 30,
-  "train_size": 16000,
-  "val_size": 4000,
-  "test_size": 5976,
+  "train_size": 4000,
+  "val_size": 1000,
+  "test_size": 999,
   "preprocessing_method": "lemmatized",
   "feature_columns": [
     "char_count",
