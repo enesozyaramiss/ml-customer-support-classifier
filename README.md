@@ -5,65 +5,49 @@
 [![F1-Score](https://img.shields.io/badge/F1--Score-98.71%25-brightgreen.svg)]()
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-success.svg)]()
 
-> **AI/ML Engineer Recruitment Task Solution**  
-> Automated customer query classification system achieving 98.71% F1-score
 
-##  Project Overview
+> **AI/ML Engineer Recruitment Task Solution**
 
-This project implements an intelligent customer query classification system for Ryanair, automatically categorizing support tickets into 30 predefined categories. The solution achieves **98.71% F1-score** using an optimized Logistic Regression model with comprehensive preprocessing and evaluation.
+## Project Overview
 
-###  Key Results
-- **98.71% F1-Score** with Logistic Regression (post-tuning)
-- **1.27% error rate** on validation data
-- **Production-ready** performance with monitoring strategy
-- **97% automation potential** for customer service routing
+This project implements an automated customer query classification system for Ryanair, categorizing support tickets into 30 predefined categories using machine learning techniques.
 
-###  Business Impact
-- **Faster response times** through automated routing
-- **Consistent categorization** across all queries
-- **Significant cost reduction** in manual processing
-- **Scalable solution** for growing customer volume
+**Key Results:**
+- **98.71% F1-Score** achieved with optimized Logistic Regression
+- **Comprehensive evaluation** with cross-validation and error analysis
+- **Production-ready** solution with deployment recommendations
 
----
-
-##  Project Structure
+## Project Structure
 
 ```
 ryanair-customer-query-classification/
 ├── data/
-│   ├── raw/                    # Original dataset files
-│   ├── processed/              # Cleaned and preprocessed data
-│   └── external/               # Additional datasets (if any)
+│   ├── raw/                           # Original dataset files
+│   └── processed/                     # Preprocessed data
 ├── notebooks/
-│   ├── 01_exploratory_analysis.ipynb      # Comprehensive EDA
-│   ├── 02_data_preprocessing.ipynb        # Text preprocessing pipeline
-│   ├── 03_model_development.ipynb         # Model training & comparison
-│   └── 04_model_evaluation.ipynb          # Advanced evaluation & tuning
+│   ├── 01_exploratory_analysis.ipynb # Data exploration and analysis
+│   ├── 02_data_preprocessing.ipynb   # Text preprocessing pipeline
+│   ├── 03_model_development.ipynb    # Model training and comparison
+│   └── 04_model_evaluation.ipynb     # Advanced evaluation and tuning
+├── models/                            # Saved model artifacts
 ├── reports/
-│   ├── figures/                # Generated plots and visualizations
-│   ├── final_report.md         # Comprehensive project report
-│   └── eda_insights.json       # EDA findings summary
-├── models/                     # Trained model artifacts
-├── requirements.txt            # Python dependencies
-├── .gitignore                 # Git ignore rules
-└── README.md                  # This file
+│   ├── figures/                       # Generated visualizations
+│   └── final_report.md               # Detailed project report
+├── requirements.txt                   # Python dependencies
+└── README.md                         # This file
 ```
 
----
-
-##  Quick Start
+## Installation and Setup
 
 ### Prerequisites
-
 - Python 3.8 or higher
-- pip package manager
-- Git
+- Jupyter Notebook or JupyterLab
 
-### Installation
+### Installation Steps
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/[your-username]/ryanair-customer-query-classification.git
+git clone https://github.com/[username]/ryanair-customer-query-classification.git
 cd ryanair-customer-query-classification
 ```
 
@@ -78,316 +62,123 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-
-##  Running the Analysis
-
-### Step 1: Exploratory Data Analysis
-```bash
-cd notebooks
-jupyter notebook 01_exploratory_analysis.ipynb
-# Or use Jupyter Lab: jupyter lab 01_exploratory_analysis.ipynb
+4. **Download NLTK data**
+```python
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
 ```
 
-**What it does:**
+## How to Run the Code
+
+### Step 1: Data Exploration
+```bash
+jupyter notebook notebooks/01_exploratory_analysis.ipynb
+```
 - Analyzes dataset structure and quality
 - Examines class distribution and text characteristics
-- Generates visualizations for data understanding
-- Creates insights summary for next steps
-
-**Expected outputs:**
-- Data quality report
-- Label distribution charts
-- Text length analysis
-- Word frequency analysis
-- Key insights JSON file
+- Generates data insights and visualizations
 
 ### Step 2: Data Preprocessing
 ```bash
-jupyter notebook 02_data_preprocessing.ipynb
+jupyter notebook notebooks/02_data_preprocessing.ipynb
 ```
-
-**What it does:**
 - Cleans and normalizes text data
-- Applies lemmatization and stop word removal
-- Engineers additional text features
-- Creates train/validation splits
-- Saves processed data for modeling
-
-**Expected outputs:**
-- Processed training and test datasets
-- Label encoder for category mapping
-- Feature engineering summary
-- Train/validation split files
+- Applies lemmatization and feature engineering
+- Creates train/validation splits with label encoding
 
 ### Step 3: Model Development
 ```bash
-jupyter notebook 03_model_development.ipynb
+jupyter notebook notebooks/03_model_development.ipynb
 ```
+- Trains and compares 8 different ML models
+- Evaluates performance using multiple metrics
+- Saves best performing model artifacts
 
-**What it does:**
-- Trains 8 different machine learning models
-- Compares performance across algorithms
-- Generates comprehensive evaluation metrics
-- Creates model comparison visualizations
-- Saves best performing models
-
-**Expected outputs:**
-- Model performance comparison
-- Confusion matrix analysis
-- Best model artifacts (`.pkl` files)
-- Training time benchmarks
-
-### Step 4: Model Evaluation & Optimization
+### Step 4: Model Evaluation
 ```bash
-jupyter notebook 04_model_evaluation.ipynb
+jupyter notebook notebooks/04_model_evaluation.ipynb
 ```
-
-**What it does:**
 - Performs cross-validation analysis
 - Conducts hyperparameter tuning
-- Analyzes learning curves and overfitting
-- Provides detailed error analysis
-- Generates production recommendations
+- Provides detailed error analysis and production recommendations
 
-**Expected outputs:**
-- Cross-validation results
-- Hyperparameter tuning improvements
-- Learning curve analysis
-- Error pattern identification
-- Production deployment strategy
+## Reproducing the Results
 
----
+### Complete Pipeline Execution
 
-##  Results Summary
+1. **Place dataset files** in `data/raw/` directory:
+   - `customer_queries_data.csv` (training data)
+   - `customer_queries_test.csv` (test data)
 
-### Model Performance
+2. **Run notebooks in sequence:**
+   ```bash
+   cd notebooks
+   jupyter notebook
+   ```
+   Execute notebooks in order: 01 → 02 → 03 → 04
 
-| Model | F1-Score | Accuracy | Training Time | Status |
-|-------|----------|----------|---------------|---------|
-| **Logistic Regression (Tuned)** | **98.71%** | **98.71%** | 2.7s | 🏆 **Best** |
-| SVM | 98.58% | 98.58% | 96.3s | Excellent |
-| Random Forest | 98.42% | 98.42% | 8.5s | Very Good |
-| XGBoost | 98.01% | 98.01% | 107.5s | Good |
-| Ensemble Voting | 98.48% | 98.48% | 426.0s | Excellent |
+3. **Expected outputs:**
+   - Processed datasets in `data/processed/`
+   - Model artifacts in `models/`
+   - Visualizations in `reports/figures/`
+   - Performance metrics and analysis results
 
-### Cross-Validation Stability
-- **Logistic Regression**: 98.58% ± 0.13% (highly stable)
-- **Minimal overfitting**: Training-validation gap of only 0.009
-- **Consistent performance**: All models show <0.3% variance
+### Expected Results
+- **Final F1-Score**: 98.71%
+- **Best Model**: Logistic Regression (tuned)
+- **Cross-validation**: 98.58% ± 0.13%
+- **Error Rate**: 1.27% on validation data
 
-### Error Analysis
-- **Total error rate**: 1.27% (51 errors out of 4,000 validation samples)
-- **Logical error patterns**: Semantically similar categories (e.g., Frequent Flyer ↔ Loyalty Programs)
-- **No systematic bias**: Errors distributed across categories
+## Key Dependencies
 
----
-
-##  Technical Details
-
-### Data Processing Pipeline
-1. **Text Cleaning**: URL removal, normalization, special character handling
-2. **Tokenization**: NLTK-based word tokenization
-3. **Lemmatization**: POS-aware lemmatization for semantic preservation
-4. **Feature Engineering**: Text statistics, punctuation analysis, keyword detection
-5. **Vectorization**: TF-IDF with optimized parameters (max_features=10000, ngrams=(1,2))
-
-### Model Architecture
-- **Primary Model**: Logistic Regression with L2 regularization
-- **Hyperparameters**: C=10.0, solver='liblinear', penalty='l2'
-- **Input Features**: TF-IDF vectors (10,000 dimensions)
-- **Output**: 30 category probabilities with confidence scores
-
-### Evaluation Strategy
-- **Primary Metric**: Weighted F1-Score (handles class imbalance)
-- **Cross-Validation**: 5-fold stratified CV for robust estimation
-- **Hyperparameter Tuning**: RandomizedSearchCV with 20 iterations
-- **Error Analysis**: Confusion matrix and misclassification pattern analysis
-
----
-
-##  Key Findings
-
-###  Best Practices Discovered
-1. **Simple models can outperform complex ones** on well-preprocessed text data
-2. **Lemmatization significantly improves** performance over basic cleaning
-3. **Hyperparameter tuning provides** meaningful improvements (0.13% gain)
-4. **Cross-validation is essential** for reliable performance estimation
-
-###  Business Insights
-1. **Payment Issues** and **Flight Changes** are most common categories
-2. **Perfect classification** achieved for Business Travel, Group Bookings
-3. **Semantic similarities** cause most classification errors
-4. **Confidence thresholds** can further reduce error impact
-
-###  Technical Insights
-1. **TF-IDF remains highly effective** for text classification
-2. **Balanced preprocessing** more important than complex models
-3. **Feature engineering** provides marginal but valuable improvements
-4. **Ensemble methods** don't always improve well-tuned simple models
-
----
-
-##  Production Deployment
-
-### Recommended Architecture
 ```
-Customer Query → API Gateway → ML Service → Confidence Check → Route Decision
-                                     ↓
-                             Model Registry ← Monitoring System
+pandas>=1.3.0
+numpy>=1.21.0
+scikit-learn>=1.0.0
+nltk>=3.6.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+xgboost>=1.6.0
+lightgbm>=3.3.0
+catboost>=1.0.0
+jupyter>=1.0.0
 ```
 
-### Deployment Strategy
-- **Confidence Threshold**: 95% for automatic routing
-- **Human Review**: Queries below 95% confidence
-- **API Response Time**: <100ms per query
-- **Monitoring**: Real-time performance tracking
-- **Retraining**: Monthly model updates
+## File Descriptions
 
-### Scaling Considerations
-- **Containerization**: Docker for consistent deployment
-- **Orchestration**: Kubernetes for auto-scaling
-- **Load Balancing**: Handle 1000+ queries/minute
-- **Monitoring**: Comprehensive performance and drift detection
+- **`01_exploratory_analysis.ipynb`**: Comprehensive EDA with 20+ visualizations
+- **`02_data_preprocessing.ipynb`**: Text cleaning, lemmatization, and feature engineering
+- **`03_model_development.ipynb`**: 8-model comparison framework with performance evaluation
+- **`04_model_evaluation.ipynb`**: Cross-validation, hyperparameter tuning, and error analysis
+- **`reports/final_report.md`**: Detailed project report with methodology and results
 
----
+## Expected Runtime
 
-##  File Descriptions
+- **Total execution time**: 15-20 minutes on standard hardware
+- **Memory requirements**: ~2GB RAM
+- **Output files**: ~500MB total size
 
-### Core Analysis Files
-- **`01_exploratory_analysis.ipynb`**: Complete EDA with 20+ visualizations
-- **`02_data_preprocessing.ipynb`**: Advanced text preprocessing pipeline
-- **`03_model_development.ipynb`**: 8-model comparison framework
-- **`04_model_evaluation.ipynb`**: Cross-validation and optimization
+## Troubleshooting
 
-### Generated Artifacts
-- **`models/best_model_*.pkl`**: Trained model artifacts
-- **`models/evaluation_summary.json`**: Comprehensive results
-- **`reports/figures/`**: All generated visualizations
-- **`data/processed/`**: Clean, ready-to-use datasets
-
-### Configuration Files
-- **`requirements.txt`**: All Python dependencies
-- **`.gitignore`**: Optimized for ML projects
-- **`reports/final_report.md`**: Detailed project report
-
----
-
-##  Reproducibility
-
-### Exact Reproduction Steps
-
-1. **Environment Setup** (5 minutes)
-```bash
-git clone [repository-url]
-cd ryanair-customer-query-classification
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-2. **Data Preparation** (2 minutes)
-```bash
-# Place CSV files in data/raw/
-# customer_queries_data.csv
-# customer_queries_test.csv
-```
-
-3. **Run Complete Pipeline** (15-20 minutes)
-```bash
-cd notebooks
-jupyter notebook
-# Open and run each notebook in order:
-# 01_exploratory_analysis.ipynb      # ~3 minutes
-# 02_data_preprocessing.ipynb         # ~2 minutes  
-# 03_model_development.ipynb          # ~8 minutes
-# 04_model_evaluation.ipynb           # ~5 minutes
-```
-
-4. **Review Results**
-```bash
-# Check generated files
-ls models/                    # Model artifacts
-ls reports/figures/          # Visualizations
-cat models/evaluation_summary.json  # Final results
-```
-
-### Expected Timeline
-- **Total runtime**: 15-20 minutes on modern hardware
-- **Peak memory usage**: ~2GB RAM
-- **Disk space**: ~500MB for all artifacts
-
----
-
-##  Troubleshooting
-
-### Common Issues
-
-**1. NLTK Download Errors**
+**NLTK Download Issues:**
 ```python
 import nltk
-nltk.download('all')  # Download all NLTK data
+nltk.download('all')
 ```
 
-**2. Memory Issues**
-```python
-# Reduce TF-IDF max_features in preprocessing
-max_features=5000  # Instead of 10000
-```
+**Memory Issues:**
+Reduce `max_features` parameter in TF-IDF vectorization (notebooks 03 and 04)
 
-**3. Package Conflicts**
+**Package Installation Issues:**
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt --force-reinstall
 ```
 
-**4. Virtual Environment Issues**
-```bash
-deactivate
-rm -rf venv
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+## Contact
 
-### Performance Optimization
-
-**For Faster Training:**
-- Reduce `n_iter` in hyperparameter tuning (line 342 in `04_model_evaluation.py`)
-- Use fewer CV folds (change `cv=5` to `cv=3`)
-- Limit TF-IDF features (`max_features=5000`)
-
-
-##  Dependencies
-
-### Core Libraries
-```
-pandas>=1.3.0          # Data manipulation
-numpy>=1.21.0          # Numerical computing
-scikit-learn>=1.0.0    # Machine learning
-nltk>=3.6.0            # Natural language processing
-```
-
-### Visualization
-```
-matplotlib>=3.5.0      # Plotting
-seaborn>=0.11.0        # Statistical visualization
-plotly>=5.0.0          # Interactive charts
-wordcloud>=1.8.1       # Word cloud generation
-```
-
-### Machine Learning Extensions
-```
-xgboost>=1.6.0         # Gradient boosting
-lightgbm>=3.3.0        # Gradient boosting
-catboost>=1.0.0        # Gradient boosting
-```
-
-### Development Tools
-```
-jupyter>=1.0.0         # Notebook environment
-joblib>=1.1.0          # Model serialization
-tqdm>=4.64.0           # Progress bars
-```
-
----
-
+For questions regarding this implementation:
+- **Email**: enesozyaramiss@gmail.com
