@@ -1,0 +1,90 @@
+{
+  "best_model": "Advanced_SVM",
+  "best_f1_score": 0.9872480362133613,
+  "best_accuracy": 0.98725,
+  "all_results": {
+    "accuracy": {
+      "Baseline_LR": 0.9845,
+      "Advanced_SVM": 0.98725,
+      "Random_Forest": 0.983,
+      "Naive_Bayes": 0.97975,
+      "XGBoost": 0.98125,
+      "LightGBM": 0.983,
+      "CatBoost": 0.95975,
+      "Ensemble_Voting": 0.98475
+    },
+    "precision": {
+      "Baseline_LR": 0.9846294179636518,
+      "Advanced_SVM": 0.987368162826694,
+      "Random_Forest": 0.9831798881223867,
+      "Naive_Bayes": 0.9801235372722269,
+      "XGBoost": 0.9814187192491954,
+      "LightGBM": 0.983161894434672,
+      "CatBoost": 0.9626086727330911,
+      "Ensemble_Voting": 0.9849338817448142
+    },
+    "recall": {
+      "Baseline_LR": 0.9845,
+      "Advanced_SVM": 0.98725,
+      "Random_Forest": 0.983,
+      "Naive_Bayes": 0.97975,
+      "XGBoost": 0.98125,
+      "LightGBM": 0.983,
+      "CatBoost": 0.95975,
+      "Ensemble_Voting": 0.98475
+    },
+    "f1_score": {
+      "Baseline_LR": 0.9844953017977417,
+      "Advanced_SVM": 0.9872480362133613,
+      "Random_Forest": 0.9830123627584412,
+      "Naive_Bayes": 0.9796859223539269,
+      "XGBoost": 0.9812600118316578,
+      "LightGBM": 0.9830189018231209,
+      "CatBoost": 0.9602893163004725,
+      "Ensemble_Voting": 0.9847482778093273
+    },
+    "training_time": {
+      "Baseline_LR": 1.5532329082489014,
+      "Advanced_SVM": 67.55866527557373,
+      "Random_Forest": 3.0236220359802246,
+      "Naive_Bayes": 0.25243186950683594,
+      "XGBoost": 40.637324810028076,
+      "LightGBM": 6.61133885383606,
+      "CatBoost": 156.9752175807953,
+      "Ensemble_Voting": 253.13804244995117
+    }
+  },
+  "label_encoder_classes": [
+    "Airport Services",
+    "Baggage Policies",
+    "Business Travel",
+    "COVID-19 Policies",
+    "Check-in Procedures",
+    "Child and Infant Travel",
+    "Complaints and Feedback",
+    "Customer Account Issues",
+    "Duty-Free Shopping",
+    "Flight Bookings",
+    "Flight Changes",
+    "Flight Status",
+    "Frequent Flyer Miles",
+    "Group Bookings",
+    "In-flight Services",
+    "Lost and Found",
+    "Loyalty Programs",
+    "Mobile App Issues",
+    "Partnerships and Alliances",
+    "Payment Issues",
+    "Pet Travel",
+    "Promotions and Discounts",
+    "Refunds and Compensation",
+    "Seat Selection",
+    "Special Assistance",
+    "Travel Documentation",
+    "Travel Insurance",
+    "Travel Restrictions",
+    "Travel Vouchers",
+    "Weather-related Disruptions"
+  ],
+  "training_date": "2025-07-21T09:59:29.382374"
+}

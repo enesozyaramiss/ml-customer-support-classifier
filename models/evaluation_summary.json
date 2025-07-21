@@ -1,0 +1,54 @@
+{
+  "evaluation_date": "2025-07-21T11:14:44.531806",
+  "best_model": "Logistic_Regression",
+  "best_f1_score": 0.9871418035229397,
+  "cross_validation_results": {
+    "Logistic_Regression": {
+      "mean": 0.9858436750057237,
+      "std": 0.0012668170528430966
+    },
+    "SVM": {
+      "mean": 0.9871824257920789,
+      "std": 0.0020174202947654605
+    },
+    "Random_Forest": {
+      "mean": 0.9841870681736165,
+      "std": 0.0011430101704616798
+    },
+    "XGBoost": {
+      "mean": 0.9800923039245703,
+      "std": 0.0014617153843161797
+    }
+  },
+  "hyperparameter_tuning": {
+    "SVM": {
+      "best_params": {
+        "kernel": "rbf",
+        "gamma": "scale",
+        "C": 1.0
+      },
+      "best_score": 0.9857548158952897,
+      "improvement": -0.0014276098967892503
+    },
+    "Logistic_Regression": {
+      "best_params": {
+        "solver": "liblinear",
+        "penalty": "l2",
+        "C": 10.0
+      },
+      "best_score": 0.9871418035229397,
+      "improvement": 0.0012981285172160018
+    }
+  },
+  "error_analysis": {
+    "total_errors": 51,
+    "error_rate": 0.01275,
+    "top_error_patterns": {
+      "Frequent Flyer Miles \u2192 Loyalty Programs": 5,
+      "Baggage Policies \u2192 Lost and Found": 4,
+      "Flight Bookings \u2192 Payment Issues": 3,
+      "COVID-19 Policies \u2192 Travel Restrictions": 3,
+      "Lost and Found \u2192 Baggage Policies": 3
+    }
+  }
+}
