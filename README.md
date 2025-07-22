@@ -47,7 +47,8 @@ ryanair-customer-query-classification/
 │   ├── 02_data_preprocessing.py      # Text preprocessing pipeline
 │   ├── 03_model_development.py       # Model training and comparison
 │   ├── 04_model_evaluation.py        # Cross-validation and optimization
-│   └── 05_model_deployment_testing.py # Production testing & validation
+│   ├── 05_model_deployment_testing.py # Production testing & validation
+│   └── BONUS - BERT_Colab.py                 # Bonus: BERT deep learning implementation
 ├── models/                            # Trained model artifacts
 │   ├── optimized_logistic_regression_model.pkl
 │   ├── optimized_logistic_regression_vectorizer.pkl
@@ -132,6 +133,28 @@ python 05_model_deployment_testing.py
 | **Evaluation** | `04_model_evaluation.py` | Cross-validation, Optuna optimization | Optimized models |
 | **Testing** | `05_model_deployment_testing.py` | Production validation, deployment readiness | Production metrics |
 
+## Bonus: BERT Deep Learning Implementation
+
+** Advanced Deep Learning Validation** - As a bonus, we implemented BERT to validate our classical ML approach.
+
+### Quick Results
+- **BERT F1-Score:** 98.8% 
+- **Classical ML F1-Score:** 98.71%
+- **Conclusion:** Marginal gain (+0.09%) with 1000x computational cost
+
+### Running BERT (Google Colab Required)
+
+** Requires GPU:** Must be run in Google Colab with GPU runtime enabled.
+
+```bash
+# Upload BERT_Colab.py to Google Colab
+# Upload train_split.csv and val_split.csv 
+# Run in Colab cell:
+!python BERT_Colab.py
+```
+
+**Key Insight:** BERT validates that our optimized Logistic Regression is the right choice for production - achieving nearly identical performance with drastically lower resource requirements.
+
 ## Results Summary
 
 ### Model Performance Comparison
@@ -143,6 +166,7 @@ python 05_model_deployment_testing.py
 | Random Forest | 98.42% | 8.5s | Very Good |
 | XGBoost (Optuna) | 97.97% | 45.2s | Good |
 | Ensemble Voting | 98.47% | 426.0s | Good but slow |
+| **BERT (Bonus)** | **98.8%** | 45 min (GPU) | Excellent but impractical |
 
 ### Production Testing Results
 
@@ -197,6 +221,7 @@ else:                     # 0.2% of cases
 2. **Preprocessing Critical:** Advanced text cleaning crucial for performance
 3. **Systematic Evaluation:** Cross-validation provided reliable model selection
 4. **Production Testing:** Real-world validation confirmed laboratory results
+5. **BERT Validation:** Deep learning confirms classical ML is optimal for this use case
 
 ### Advanced Techniques Applied
 
@@ -204,6 +229,7 @@ else:                     # 0.2% of cases
 - **Feature Engineering:** TF-IDF with domain-specific optimizations  
 - **Error Analysis:** Systematic misclassification pattern identification
 - **Confidence Calibration:** Production-ready probability thresholding
+- **Deep Learning Validation:** BERT transformer architecture comparison
 
 ## Dependencies
 
@@ -225,6 +251,11 @@ seaborn>=0.11.0
 
 # Production Tools
 joblib>=1.1.0
+
+# Bonus: BERT Dependencies (Google Colab only)
+torch>=1.9.0
+transformers>=4.0.0
+tqdm>=4.0.0
 ```
 
 ## Performance Benchmarks
@@ -234,26 +265,26 @@ joblib>=1.1.0
 - **Model Training:** 2.7s (Logistic Regression)
 - **Inference Time:** <100ms per query
 - **Memory Usage:** 2GB peak during training
+- **BERT Training:** 30 minutes (GPU required)
 
 ### Hardware Requirements
 - **CPU:** Standard multi-core processor
 - **Memory:** 4GB minimum, 8GB recommended
 - **Storage:** 1GB for complete pipeline outputs
-- **GPU:** Not required
+- **GPU:** Not required (except for BERT bonus)
 
 ## Future Enhancements
 
 ### Technical Roadmap
 1. **Active Learning:** Incorporate human feedback for continuous improvement
-2. **Advanced Models:** Explore BERT/transformer architectures
-3. **Multi-language Support:** Extend to European languages
-4. **Context Integration:** Include customer history and interaction patterns
+2. **Multi-language Support:** Extend to European languages
+3. **Context Integration:** Include customer history and interaction patterns
+4. **Real-time Learning:** Incremental model updates
 
 ### Operational Improvements
-1. **Real-time Learning:** Incremental model updates
-2. **A/B Testing:** Compare model versions in production
-3. **Advanced Monitoring:** Drift detection and automated alerts
-4. **API Development:** REST endpoints for production integration
+1. **A/B Testing:** Compare model versions in production
+2. **Advanced Monitoring:** Drift detection and automated alerts
+3. **API Development:** REST endpoints for production integration
 
 
 **Enes Ozyaramis**  
