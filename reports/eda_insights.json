@@ -1,24 +1,24 @@
 {
-  "total_samples": 5000,
+  "total_samples": 20000,
   "num_categories": 30,
-  "class_balance_ratio": 2.2476190476190476,
-  "avg_query_length": 71.7996,
-  "avg_word_count": 12.9164,
+  "class_balance_ratio": 2.1802884615384617,
+  "avg_query_length": 71.89085,
+  "avg_word_count": 12.95275,
   "quality_issues": {
     "very_short": 0,
     "very_long": 0,
-    "special_chars": 1
+    "special_chars": 5
   },
   "top_categories": {
-    "Complaints and Feedback": 236,
-    "Payment Issues": 230,
-    "Flight Status": 212,
-    "Lost and Found": 212,
-    "Refunds and Compensation": 210,
-    "Flight Changes": 209,
-    "Mobile App Issues": 208,
-    "Baggage Policies": 202,
-    "Travel Documentation": 185,
-    "Special Assistance": 184
+    "Payment Issues": 907,
+    "Complaints and Feedback": 883,
+    "Lost and Found": 856,
+    "Flight Status": 824,
+    "Mobile App Issues": 814,
+    "Flight Changes": 785,
+    "Refunds and Compensation": 767,
+    "Travel Documentation": 765,
+    "Baggage Policies": 763,
+    "Flight Bookings": 731
   }
 }

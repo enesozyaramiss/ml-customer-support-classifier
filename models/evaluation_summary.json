@@ -1,5 +1,5 @@
 {
-  "evaluation_date": "2025-07-21T11:14:44.531806",
+  "evaluation_date": "2025-07-22T12:21:54.711958",
   "best_model": "Logistic_Regression",
   "best_f1_score": 0.9871418035229397,
   "cross_validation_results": {
@@ -38,6 +38,19 @@
       },
       "best_score": 0.9871418035229397,
       "improvement": 0.0012981285172160018
+    },
+    "XGBoost_Optuna": {
+      "best_params": {
+        "n_estimators": 201,
+        "max_depth": 7,
+        "learning_rate": 0.2975261995001501,
+        "subsample": 0.9981205711367686,
+        "colsample_bytree": 0.7027683007133353,
+        "reg_alpha": 0.4149911517136421,
+        "reg_lambda": 0.05712723448591357
+      },
+      "best_score": 0.9797488323007846,
+      "improvement": -0.00034347162378567386
     }
   },
   "error_analysis": {
